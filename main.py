@@ -1,58 +1,61 @@
-number = int(input())
-print("Введите число от 1 до 5")
+import math
+
 print("1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление, 5 - вычисление корней квадратного уравнения")
+number = int(input("Введите число от 1 до 5: "))
+
+spisok = []
+spisok = number
+
+a = int(input("Введите a:  "))
+b = int(input("Введите b:  "))
+
+if spisok == 1:
+    def sum(a, b):
+        result = a + b
+        return result
 
 
-if number == 1:
-    print("Введите первое число")
-    a = int(input())
-    print("Введите второе число")
-    b = int(input())
-    result = (a+b)
-    print("Результат сложения: " + str(result))
+    print("Результат сложения:", sum(a, b))
 
-if number == 2:
-    print("Введите первое число")
-    a = int(input())
-    print("Введите второе число")
-    b = int(input())
-    result = (a - b)
-    print("Результат вычитания: " + str(result))
+if spisok == 2:
+    def minus(a, b):
+        result = a - b
+        return result
 
-if number == 3:
-    print("Введите первое число")
-    a = int(input())
-    print("Введите второе число")
-    b = int(input())
-    result = (a * b)
-    print("Результат умножения: " + str(result))
 
-if number == 4:
-    print("Введите первое число")
-    a = int(input())
-    print("Введите второе число")
-    b = int(input())
-    result = (a / b)
-    print("Результат деления: " + str(result))
+    print("Результат вычитания:", sum(a, b))
 
-if number == 5:
-    print("Введите a")
-    a = int(input())
-    print("Введите b")
-    b = int(input())
-    print("Введите c")
-    c = int(input())
-    d = int((b**2)-4*a*c) #дискриминат
-    if d < 0:
+if spisok == 3:
+    def prois(a, b):
+        result = a * b
+        return result
+
+
+    print("Результат умножения:", sum(a, b))
+
+if spisok == 4:
+    def dell(a, b):
+        result = a / b
+        return result
+
+
+    print("Результат деления:", sum(a, b))
+
+if spisok == 5:
+    f = 2 * a  # знаменатель дроби при вычислении x
+    c = int(input("Введите c: "))
+
+    def discriminant(a,b,c):
+        d = int((b ** 2) - 4 * a * c)  # дискриминат
+        return d
+    if discriminant(a,b,c) < 0:
         print("корней нет")
     else:
-        f = 2 * a #знаменатель дроби при вычислении x
-        if d == 0:
-            x = -b/f
-            print("x = " + str(x))
+        if discriminant(a,b,c) == 0:
+            x1 = -b / f
+            print("x = " + str(x1))
         else:
-            f = 2 * a #знаменатель дроби при вычислении x
-            x1 = ((-b)+(d**0.5))/f
-            x2 = ((-b)-(d**0.5))/f
+            x1 = ((-b) + (discriminant(a,b,c) ** 0.5)) / f
+            x2 = ((-b) - (discriminant(a,b,c) ** 0.5)) / f
             print("x1 = " + str(x1))
             print("x2 = " + str(x2))
